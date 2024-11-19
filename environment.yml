@@ -1,0 +1,10 @@
+name: oglife-app-dev
+channels:
+- conda-forge
+dependencies:
+- python>=3.12,<3.13
+- numpy
+- scipy
+- pip
+- pip:
+  - flask

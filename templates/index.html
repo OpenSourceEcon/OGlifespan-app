@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Silver Linings Sensitivity Analysis App </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='mystyle.css') }}">
+</head>
+<body>
+    <h1>Input variable slider bars</h1>
+    <form method="POST">  
+        <div class="form-group">
+            <label for="slider1">Minimum age affected by breakthrough:</label>
+            <input type="range" class="form-control-range" id="slider1" name="slider1" step="1" list="slider1_values" min="40" max="65" value="50">
+            <datalist id="slider1_values">
+                <option value="40" label="40"></option>
+                <option value="45" label="45"></option>
+                <option value="50" label="50"></option>
+                <option value="55" label="55"></option>
+                <option value="60" label="60"></option>
+                <option value="65" label="65"></option>
+            </datalist>
+            <p>Age: <output id="slider1_value"></output></p>
+            <script>
+                const value1 = document.querySelector("#slider1_value");
+                const input1 = document.querySelector("#slider1");
+                value1.textContent = input1.value;
+                input1.addEventListener("input", (event) => {
+                value1.textContent = event.target.value;
+                });
+            </script>
+        </div>
+        <div class="S">
+            <label for="slider2">Number of years from 2025 until beginning effect:</label>
+            <input type="range" class="form-control-range" id="slider2" name="slider2" step="1" list="slider2_values" min="0" max="20" value="10">
+            <datalist id="slider2_values">
+                <option value="0" label="0"></option>
+                <option value="5" label="5"></option>
+                <option value="10" label="10"></option>
+                <option value="15" label="15"></option>
+                <option value="20" label="20"></option>
+            </datalist>
+            <p>Years: <output id="slider2_value"></output></p>
+            <script>
+                const value2 = document.querySelector("#slider2_value");
+                const input2 = document.querySelector("#slider2");
+                value2.textContent = input2.value;
+                input2.addEventListener("input", (event) => {
+                value2.textContent = event.target.value;
+                });
+            </script>
+        </div>
+        <div class="form-group">
+            <label for="slider3">Number of years after initial effect for full effect:</label>
+            <input type="range" class="form-control-range" id="slider3" name="slider3" step="1" list="slider3_values" min="0" max="20" value="10">
+            <datalist id="slider3_values">
+                <option value="0" label="0"></option>
+                <option value="5" label="5"></option>
+                <option value="10" label="10"></option>
+                <option value="15" label="15"></option>
+                <option value="20" label="20"></option>
+            </datalist>
+            <p>Years: <output id="slider3_value"></output></p>
+            <script>
+                const value3 = document.querySelector("#slider3_value");
+                const input3 = document.querySelector("#slider3");
+                value3.textContent = input3.value;
+                input3.addEventListener("input", (event) => {
+                value3.textContent = event.target.value;
+                });
+            </script>
+        </div>
+        <div class="form-group">
+            <label for="slider4">Biological age improvement (years) in mortality rates:</label>
+            <input type="range" class="form-control-range" id="slider4" name="slider4" step="0.05" list="slider4_values" min="0" max="5" value="1">
+            <datalist id="slider4_values">
+                <option value="0" label="0"></option>
+                <option value="1" label="1"></option>
+                <option value="2" label="2"></option>
+                <option value="3" label="3"></option>
+                <option value="4" label="4"></option>
+                <option value="5" label="5"></option>
+            </datalist>
+            <p>Biological years improvement: <output id="slider4_value"></output></p>
+            <script>
+                const value4 = document.querySelector("#slider4_value");
+                const input4 = document.querySelector("#slider4");
+                value4.textContent = input4.value;
+                input4.addEventListener("input", (event) => {
+                value4.textContent = event.target.value;
+                });
+            </script>
+        </div>
+        <div class="form-group">
+            <label for="slider5">Biological age improvement (years) in productivity:</label>
+            <input type="range" class="form-control-range" id="slider5" name="slider5" step="0.05" list="slider5_values" min="0" max="5" value="1">
+            <datalist id="slider5_values">
+                <option value="0" label="0"></option>
+                <option value="1" label="1"></option>
+                <option value="2" label="2"></option>
+                <option value="3" label="3"></option>
+                <option value="4" label="4"></option>
+                <option value="5" label="5"></option>
+            </datalist>
+            <p>Biological years improvement: <output id="slider5_value"></output></p>
+            <script>
+                const value5 = document.querySelector("#slider5_value");
+                const input5 = document.querySelector("#slider5");
+                value5.textContent = input5.value;
+                input5.addEventListener("input", (event) => {
+                value5.textContent = event.target.value;
+                });
+            </script>
+        </div>
+        <div class="form-group">
+            <label for="slider6">Biological age improvement (years) in fertility rates:</label>
+            <input type="range" class="form-control-range" id="slider6" name="slider6" step="0.05" list="slider6_values" min="0" max="1.5" value="0.5">
+            <datalist id="slider6_values">
+                <option value="0" label="0"></option>
+                <option value="0.5" label="0.5"></option>
+                <option value="1.0" label="1.0"></option>
+                <option value="1.5" label="1.5"></option>
+            </datalist>
+            <p>Biological years improvement: <output id="slider6_value"></output></p>
+            <script>
+                const value6 = document.querySelector("#slider6_value");
+                const input6 = document.querySelector("#slider6");
+                value6.textContent = input6.value;
+                input6.addEventListener("input", (event) => {
+                value6.textContent = event.target.value;
+                });
+            </script>
+        </div>
+        <div class="form-group">
+            <label for="slider7">Discount rate:</label>
+            <input type="range" class="form-control-range" id="slider7" name="slider7" step="0.001" list="slider7_values" min="0.01" max="0.06" value="0.02">
+            <datalist id="slider7_values">
+                <option value="0.01" label="0.01"></option>
+                <option value="0.02" label="0.02"></option>
+                <option value="0.03" label="0.03"></option>
+                <option value="0.04" label="0.04"></option>
+                <option value="0.05" label="0.05"></option>
+                <option value="0.06" label="0.06"></option>
+            </datalist>
+            <p>Discount rate: <output id="slider7_value"></output></p>
+            <script>
+                const value7 = document.querySelector("#slider7_value");
+                const input7 = document.querySelector("#slider7");
+                value7.textContent = input7.value;
+                input7.addEventListener("input", (event) => {
+                value7.textContent = event.target.value;
+                });
+            </script>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {% if result %}
+        <p>Net present value (NPV, $ trillions): {{ result }}</p>
+    {% endif %}
+</body>
+</html>
