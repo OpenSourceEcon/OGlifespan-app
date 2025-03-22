@@ -1,5 +1,3 @@
-# main.py
-
 import pickle
 import numpy as np
 from flask import Flask, render_template, request
@@ -8,7 +6,7 @@ app = Flask(__name__)
 
 # Load the pickled function
 pkl_func_path = (
-    "/Users/richardevans/Docs/Economics/OSE/demos/OGlifespan-app/" +
+    "/Users/richardevans/Docs/Economics/OSE/OG/OGlifespan-app/" +
     "interp_rbf_OGlifesense.pkl"
 )
 with open(pkl_func_path, 'rb') as f:
